@@ -1,2 +1,2 @@
 # api-tools
-A set of tools under development for creating a graphql api from a definition file
+A set of tools currently in development to make life easier when creating a graphql api. Tools in here will read from a configuration file and create a graphql schema, resolvers, controllers, and sequelize bindings according to the data model defined in the conf file. All types, resolvers, controllers, and sequelize bindings are extensible and overridable. All of these custom types, resolvers, etc. are defined externally in a file structure defined in the configuration file. Future versions will include tooling for front-end tasks, such as HOCs for components bound to certain data models.
