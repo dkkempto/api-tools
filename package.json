@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "api-parser": "C:\\Users\\dkkem\\custom-modules\\api-parser",
+    "dedent": "^0.7.0",
     "graphql": "^0.13.2",
     "graphql-tools": "^3.0.5"
   },
