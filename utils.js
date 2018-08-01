@@ -25,6 +25,19 @@ const dedent = (lines) => {
   return lines.join('\n');
 }
 
+
+const isVisible = (obj) => {
+  return (
+    obj.public ||
+    obj.private ||
+    obj.protected ||
+    obj.internal ||
+    obj.included ||
+    obj.required
+  );
+}
+
 module.exports = {
-  dedent
+  dedent,
+  isVisible
 }
