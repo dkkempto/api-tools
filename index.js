@@ -6,6 +6,7 @@ const { makeExecutableSchema } = require('graphql-tools');
 const { parse } = require('jaml-parser');
 
 const { getTypes } = require('./types');
+const { getResolvers } = require('./resolvers');
 
 class Api {
   
@@ -23,6 +24,7 @@ class Api {
   init() {
     this.api = parse(`${this.config.root_dir}/api.jaml`);
     this.types = getTypes(this.config, this.api);
+    this.resolvers = getResolvers(this.config, this.api);
   }
 }
 
