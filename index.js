@@ -3,15 +3,9 @@
  */
 
 const { makeExecutableSchema } = require('graphql-tools');
-const { parse } = require('api-parser');
+const { parse } = require('jaml-parser');
 
 const { getTypes } = require('./types');
-
-const types = ``;
-
-const resolvers = {};
-
-const schema = null;
 
 class Api {
   
