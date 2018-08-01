@@ -1,5 +1,9 @@
 let controllers = null;
 
+/**
+ * Controllers should be model agnostic. Controller should have a common interface, such as getOne(model, field?)
+ */
+
 const getControllers = (config, api) => {
     return {
         User: createController(),
