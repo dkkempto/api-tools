@@ -37,7 +37,38 @@ const isVisible = (obj) => {
   );
 }
 
+//TODO: Maybe throw an error if there are multiple access modifiers set? Doesn't really seem to make a whole lot of sense to have multiple. They don't really coalesce
+const getAccessModifier = (obj, defaultModifier = 'public') => {
+  let modifier = defaultModifier;
+
+  //Lowest precedence
+  if(obj.public) modifier = ACCESS_MODIFIERS.PUBLIC;
+  
+  //These, I'm not really sure. Honestly you really shouldn't be setting multiple access modifiers, this is just being safe.
+  if(obj.private) modifier = ACCESS_MODIFIERS.PUBLIC;
+  if(obj.protected) modifier = ACCESS_MODIFIERS.PUBLIC;
+  if(obj.internal) modifier = ACCESS_MODIFIERS.PUBLIC;
+
+  //Highest precedence. If set as hidden, it should be hidden
+  if(obj.hidden) modifier = ACCESS_MODIFIERS.PUBLIC;
+
+  return modifier;
+}
+
+const ACCESS_MODIFIERS = {
+  PUBLIC: 'public',
+  PRIVATE: 'private',
+  PROTECTED: 'protected',
+  INTERNAL: 'internal',
+  HIDDEN: 'hidden'
+}
+
+const DEFAULT_PATH = '../../graphql';
+
 module.exports = {
   dedent,
-  isVisible
+  isVisible,
+  ACCESS_MODIFIERS,
+  DEFAULT_PATH,
+  getAccessModifier
 }
