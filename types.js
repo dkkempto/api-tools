@@ -10,9 +10,7 @@ const defaults = dedent`
 
   type Query
   type Mutation
-  type Subscription {
-    test: String
-  }
+  type Subscription
 
   input DateTimeFilter {
     after: String
